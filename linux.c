@@ -177,7 +177,7 @@ SP_PRIV enum sp_return list_ports(struct sp_port ***list)
 		RETURN_FAIL("could not open /sys/class/tty");
 
 	DEBUG("Iterating over results");
-	while (!readdir_r(dir, &entry, &result) && result) {
+	while ((result = readdir(dir)) != NULL) {
 		snprintf(buf, sizeof(buf), "/sys/class/tty/%s", entry.d_name);
 		len = readlink(buf, target, sizeof(target));
 		if (len <= 0 || len >= (int) sizeof(target)-1)
