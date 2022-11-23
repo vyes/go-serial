@@ -35,7 +35,7 @@ Example Usage
 package serial
 
 /*
-#cgo CFLAGS: -g -O2 -Wall -Wextra -DSP_PRIV= -DSP_API= -DCMAKE_CXX_FLAGS=-Wno-restrict
+#cgo CFLAGS: -g -O2 -Wall -Wextra -DSP_PRIV= -DSP_API= -Wno-restrict
 #cgo darwin LDFLAGS: -framework IOKit -framework CoreFoundation
 
 #include <stdarg.h>
