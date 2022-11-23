@@ -160,7 +160,7 @@ extern void (*sp_debug_handler)(const char *format, ...);
 
 /* Debug output macros. */
 #define DEBUG_FMT(fmt, ...) do { \
-	if (sp_debug_handler) \
+	if (sp_debug_handler != NULL) \
 		sp_debug_handler(fmt ".\n", __VA_ARGS__); \
 } while (0)
 #define DEBUG(msg) DEBUG_FMT(msg, NULL)
